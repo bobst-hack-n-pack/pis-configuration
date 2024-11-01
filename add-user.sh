@@ -1,5 +1,10 @@
 #!/bin/bash
 
+sudo apt update
+sudo apt upgrade -y
+sudo apt install passwd -y 
+which useradd chpasswd usermod
+
 # Check if the username and password are provided as arguments
 if [ $# -ne 2 ]; then
   echo "Usage: $0 <username> <password>"
