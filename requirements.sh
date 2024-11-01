@@ -5,7 +5,13 @@ sudo apt update
 sudo apt upgrade -y
 
 # Install system packages with apt
-sudo apt install -y python3-pip python3-rpi.gpio python3-asyncio 
+sudo apt install -y python3-pip python3-rpi.gpio
+
+# Check if asyncio is already installed
+if ! python3 -c "import asyncio"; then
+  echo "asyncio not found. Please make sure you have a valid Python 3 installation."
+  exit 1
+fi
 
 # Create a virtual environment
 python3 -m venv my_venv
