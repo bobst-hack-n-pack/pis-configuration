@@ -4,7 +4,8 @@ sudo apt-get update
 sudo apt-get install figlet
 # Print a fancy ASCII art banner
 figlet -f big "BOBST"
-figlet "IoT -  Hack 'n' Pack"
+figlet -f big "IoT"
+figlet -f big "Hack 'n' Pack"
 
 # Update and upgrade
 sudo apt update
