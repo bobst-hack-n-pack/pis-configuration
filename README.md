@@ -9,4 +9,5 @@ Example
 `ssh bobst@pi1`
 
 Then run the following command
+
 `curl -L https://raw.githubusercontent.com/bobst-hack-n-pack/pis-configuration/refs/heads/main/requirements.sh | bash`
