@@ -1,12 +1,13 @@
 #!/bin/bash
 
-sudo apt update
-sudo apt upgrade -y
-sudo apt install passwd -y 
-which useradd chpasswd usermod
+# Check if the script is run as root
+if [[ $EUID -ne 0 ]]; then
+  echo "This script must be run as root."
+  exit 1
+fi
 
-# Check if the username and password are provided as arguments
-if [ $# -ne 2 ]; then
+# Check if the correct number of arguments are provided
+if [[ $# -ne 2 ]]; then
   echo "Usage: $0 <username> <password>"
   exit 1
 fi
@@ -16,12 +17,12 @@ username=$1
 password=$2
 
 # Create the user with a home directory and bash as the default shell
-/usr/sbin/useradd -m -s /bin/bash "$username"
+useradd -m -s /bin/bash "$username"
 
 # Set the user's password
-echo "$username:$password" | /usr/sbin/chpasswd
+echo "$username:$password" | chpasswd
 
-# Add the user to the sudo group 
-/usr/sbin/usermod -aG sudo "$username"
+# Add the user to the sudo group to grant admin rights
+usermod -aG sudo "$username"
 
-echo "User '$username' created with admin rights."
+echo "User '$username' created successfully with admin rights."
