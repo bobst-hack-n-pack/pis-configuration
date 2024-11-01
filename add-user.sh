@@ -16,12 +16,12 @@ username=$1
 password=$2
 
 # Create the user with a home directory and bash as the default shell
-useradd -m -s /bin/bash "$username"
+/usr/sbin/useradd -m -s /bin/bash "$username"
 
 # Set the user's password
-echo "$username:$password" | chpasswd
+echo "$username:$password" | /usr/sbin/chpasswd
 
-# Add the user to the sudo group (or another group with admin rights)
-usermod -aG sudo "$username"
+# Add the user to the sudo group 
+/usr/sbin/usermod -aG sudo "$username"
 
 echo "User '$username' created with admin rights."
