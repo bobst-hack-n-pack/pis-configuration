@@ -2,6 +2,11 @@
 
 # Download app.py in correct folder
 
+cd 
+mkdir status-app
+cd status-app
+wget https://raw.githubusercontent.com/bobst-hack-n-pack/pis-configuration/refs/heads/main/slave.py
+mv slave.py app.py
 
 sudo echo "[Unit]
 Description=Raspberry Pi Slave Monitor
