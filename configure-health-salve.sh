@@ -2,7 +2,7 @@
 
 # Download app.py in correct folder
 
-cd 
+cd /home/bobst
 mkdir status-app
 cd status-app
 wget https://raw.githubusercontent.com/bobst-hack-n-pack/pis-configuration/refs/heads/main/slave.py
