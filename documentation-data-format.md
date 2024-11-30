@@ -42,7 +42,7 @@ def send_telemetry():
             "datasource": "172.17.2.1:80",
             "machineid": "jadevmachina",
             "totaloutputunitcount": 140,
-            "machineSpeed": 5,
+            "machinespeed": 5,
         }
     }
     telemetry_json = json.dumps(telemetry_data)
