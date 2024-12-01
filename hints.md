@@ -83,6 +83,14 @@ async def send_machine_event(self, event_type, job_id, total_output_unit_count, 
     await self.__send_message([message], "MachineEvent")
 ```
 
+🔥 **HINT 7 MachineEvent data:** - 02:00
+[send-machineEvent-to-azure-iothub-working-example.py](send-machineEvent-to-azure-iothub-working-example.py)
+
+__Here is an example of code that will send data for the whole precedent day. Start and stoping production every 10 minutes.
+This is just an example, it might contains errors and it is not a reference for clean code.__
+
+
+
 ---
 
 **Other stuff to do**
