@@ -67,6 +67,22 @@ pause()  # Keeps the program running to listen for events
 🔥 **HINT 6 Telemetry data:** - 01:00
 [send-telemetry-to-azure-iothub-working-example.py](send-telemetry-to-azure-iothub-working-example.py)
 
+**Little precision about the machine events:**
+For the machine Event we expect a list of message: `[message]``
+
+```python
+async def send_machine_event(self, event_type, job_id, total_output_unit_count, machine_speed):
+    message = {
+        "type": event_type,
+        "equipmentId": self.machine_id,
+        "jobId": job_id,
+        "totalOutputUnitCount": total_output_unit_count,
+        "machineSpeed": machine_speed,
+        "timestamp": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
+    }
+    await self.__send_message([message], "MachineEvent")
+```
+
 ---
 
 **Other stuff to do**
